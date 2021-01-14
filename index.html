@@ -8,10 +8,20 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
     <style>
+        #clickEl {
+            background-color: gray;
+        }
         #image {
             height: 100px;
             width: 200px;
         }
+
+        #letterBox {
+            height: 100px;
+            width: 200px;
+        }
+
+
     </style>
 </head>
 <body>
@@ -21,6 +31,8 @@
     <button id="buttonOne">??????</button>
     <br>
     <div id="image"></div>
+
+    <div id="letterBox">Letters go here</div>
     
 
 
@@ -42,7 +54,8 @@
         
         var buttonOne = document.querySelector("#buttonOne");
         buttonOne.addEventListener("mouseover", image);
-        buttonOne.addEventListener("click", song)
+        buttonOne.addEventListener("mouseout", empty)
+        
         
 
         function image() {
@@ -51,10 +64,23 @@
 
     }
 
+    function empty() {
+        var pic = document.querySelector("#image");
+        pic.innerHTML = "";
+    }
+    
+var letters = ["a", "b", "c", "d", "e"];
 
+for (j = 0; j < letters.length; j++) {
+    var letterSpot = document.querySelector("#letterBox");
+    letterSpot.textContent = letters;
+    console.log(letters[j]);
+}
 
-
-
+buttonOne.addEventListener("click", clear)
+function clear(){
+    letterSpot.innerHTML = ""
+}
 
 
 
