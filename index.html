@@ -6,10 +6,21 @@
     <title>Playtime</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+    <style>
+        #image {
+            height: 100px;
+            width: 200px;
+        }
+    </style>
 </head>
 <body>
 
     <h2 id="clickEl">Click Me!!!</h2>
+    <br>
+    <button id="buttonOne">??????</button>
+    <br>
+    <div id="image"></div>
     
 
 
@@ -17,13 +28,29 @@
 
         var click = document.querySelector("#clickEl"); 
         click.addEventListener("click", change);
+        click.addEventListener("dblclick", changeBack);
+
 
         function change() {
             click.innerHTML = "I changed!!";
         }        
 
+        function changeBack() {
+            click.innerHTML = "Click Me!!!";
+        }
 
         
+        var buttonOne = document.querySelector("#buttonOne");
+        buttonOne.addEventListener("mouseover", image);
+        buttonOne.addEventListener("click", song)
+        
+
+        function image() {
+            var pic = document.querySelector("#image");
+            pic.innerHTML ="<img src=\"https://banner2.cleanpng.com/20171218/707/mouse-cursor-png-5a37c6e2d91ee2.1804954915136048348893.jpg\">"
+
+    }
+
 
 
 
