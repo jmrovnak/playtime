@@ -31,9 +31,16 @@
     <button id="buttonOne">??????</button>
     <br>
     <div id="image"></div>
-
+    <br>
     <div id="letterBox">Letters go here</div>
+    <br>
     
+    <div class="input-group flex-nowrap">
+        <span class="input-group-text" id="addon-wrapping">@</span>
+        <input type="text" class="form-control" placeholder="Enter username here:" aria-label="Username" aria-describedby="addon-wrapping">
+      </div>
+      <br>
+    <button id="userButton">Submit Username</button>
 
 
     <script>
@@ -68,7 +75,7 @@
         var pic = document.querySelector("#image");
         pic.innerHTML = "";
     }
-    
+
 var letters = ["a", "b", "c", "d", "e"];
 
 for (j = 0; j < letters.length; j++) {
@@ -81,6 +88,23 @@ buttonOne.addEventListener("click", clear)
 function clear(){
     letterSpot.innerHTML = ""
 }
+
+var userName = document.querySelector(".form-control")
+userName.addEventListener("keyup", log);
+
+function log() {
+    console.log(userName.textContent);
+}
+
+var submit = document.querySelector("#userButton");
+submit.addEventListener("click", storeName);
+
+function storeName() {
+    console.log(userName.value);
+}
+
+var nameLength = userName.value;
+var n = nameLength.length;
 
 
 
