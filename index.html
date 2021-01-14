@@ -103,9 +103,21 @@ function storeName() {
     console.log(userName.value);
 }
 
-var nameLength = userName.value;
-var n = nameLength.length;
 
+var pjMasks = {
+    catboy: "blue",
+    owlette: "red",
+    gecko: "green",
+}
+
+var keys = Object.keys(pjMasks);
+console.log(keys);
+
+var values = Object.values(pjMasks);
+console.log(values);
+
+var entries = Object.entries(pjMasks);
+console.log(entries);
 
 
     </script>
